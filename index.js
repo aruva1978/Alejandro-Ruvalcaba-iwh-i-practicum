@@ -73,7 +73,7 @@ app.post('/update-cobj', async (req, res) => {
 
     try {
         await axios.post(customObjects, createRecord, { headers });
-        res.redirect('/');
+        res.redirect('/update-cobj');
     } catch (err) {
         console.error(err.response?.data || err);
         res.status(500).send('Error creating record. Check terminal logs.');
