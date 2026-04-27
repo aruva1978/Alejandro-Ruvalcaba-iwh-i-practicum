@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title= `${title}`
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    p
+      a(href="/") Return to the homepage
+
+    .form-wrapper
+      h1 Create a new record
+      form(method="post" action="/update-cobj")
+        label(for="model_type") Model
+        select#model_type(name="model_type" required)
+          option(value="" selected disabled) Select a Model
+          option(value="SUV") SUV
+          option(value="Sedan") Sedan
+          option(value="Pickup Truck") Pickup Truck
+          option(value="Electric Vehicle") Electric Vehicle
+          option(value="Coupe") Coupe
+          option(value="Minivan") Minivan
+          option(value="Convertible") Convertible
+
+
+        label(for="name") name
+        input#name(type="text" name="name" required)
+
+        label(for="year") year
+        input#year(type="number" name="year" required)
+
+        input(type="submit" value="Submit")

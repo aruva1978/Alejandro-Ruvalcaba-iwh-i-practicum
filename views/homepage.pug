@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= `${title}`
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Custom Objects
+    p
+      a(href="/update-cobj") Add to this table
+
+    table(border="1" cellpadding="8" cellspacing="0" style="margin:1rem; border-collapse:collapse; width:calc(100% - 2rem);")
+      thead
+        tr
+          th ID
+          each prop in properties
+            th= prop
+      tbody
+        each record in records
+          tr
+            td= record.id
+            each prop in properties
+              td= (record.properties && record.properties[prop]) ? record.properties[prop] : ''
