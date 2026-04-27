@@ -14,7 +14,7 @@ const PRIVATE_APP_ACCESS = process.env.PRIVATE_APP_ACCESS;
 
 // * Custom object + 3 custom properties for the practicum
 const CUSTOM_OBJECT_TYPE = '2-228854926';
-const PROPERTIES = ['brand', 'name', 'year'];
+const PROPERTIES = ['model_type', 'name', 'year'];
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage ("/") to call your custom object data.
 app.get('/', async (req, res) => {
@@ -59,7 +59,7 @@ app.get('/update-cobj', (req, res) => {
 app.post('/update-cobj', async (req, res) => {
     const createRecord = {
         properties: {
-            brand: req.body.brand,
+            model_type: req.body.model_type,
             name: req.body.name,
             year: req.body.year
         }
